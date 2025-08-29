@@ -4,75 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="./src/output.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1>🔐 Password Generator</h1>
-        <div class="generator-form">
-            <div class="form-group">
-                <label for="length">Password Length:</label>
-                <input type="range" id="length" min="4" max="50" value="12">
-                <span id="length-value">12</span>
-            </div>
-            
-            <div class="form-group">
-                <h3>Character Types:</h3>
-                <div class="checkbox-group">
-                    <label>
-                        <input type="checkbox" id="lowercase" checked>
-                        Lowercase (a-z)
-                    </label>
-                    <label>
-                        <input type="checkbox" id="uppercase" checked>
-                        Uppercase (A-Z)
-                    </label>
-                    <label>
-                        <input type="checkbox" id="numbers" checked>
-                        Numbers (0-9)
-                    </label>
-                    <label>
-                        <input type="checkbox" id="symbols" checked>
-                        Symbols (!@#$%^&*)
-                    </label>
+<body class='bg-gray-100'>
+    <div class="grid h-screen w-screen place-items-center ">
+        <div class="container grid h-fit w-3/5 place-items-center p-6 bg-white rounded-lg shadow-lg gap-3">
+            <h1 class="text-3xl font-bold ">🔐 Password Generator</h1>
+            <div class="generator-form mt-10">
+                <div class="form-group ">
+                    <label for="length" class="">Password Length:</label>
+                    <input type="range" class="" id="length" min="4" max="50" value="8">
+                    <span id="length-value" class="">12</span>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Character Types:</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="lowercase" checked>
+                            Lowercase (a-z)
+                        </label>
+                        <label>
+                            <input type="checkbox" id="uppercase" checked>
+                            Uppercase (A-Z)
+                        </label>
+                        <label>
+                            <input type="checkbox" id="numbers" checked>
+                            Numbers (0-9)
+                        </label>
+                        <label>
+                            <input type="checkbox" id="symbols" checked>
+                            Symbols (!@#$%^&*)
+                        </label>
+                    </div>
+                </div>
+                
+                <button id="generate-btn" class="generate-btn w-full py-5 bg-blue-500 text-white rounded-lg font-bold h-10">Generate Password</button>
+                
+                <div class="password-output">
+                    <input type="text" id="password" readonly placeholder="Your password will appear here">
+                    <button id="copy-btn" class="copy-btn" title="Copy to clipboard">📋</button>
+                </div>
+                
+                <div class="strength-meter">
+                    <div class="strength-label">Strength:</div>
+                    <div class="strength-bar">
+                        <div id="strength-fill" class="strength-fill"></div>
+                    </div>
+                    <span id="strength-text">Generate a password</span>
                 </div>
             </div>
             
-            <div class="form-group">
-                <label>
-                    <input type="checkbox" id="exclude-similar">
-                    Exclude similar characters (i, l, 1, L, o, 0, O)
-                </label>
+            <div class="info-section ">
+                <h3>Password Security Tips:</h3>
+                <ul>
+                    <li>Use a unique password for each account</li>
+                    <li>Make passwords at least 12 characters long</li>
+                    <li>Include a mix of character types</li>
+                    <li>Don't use personal information</li>
+                    <li>Consider using a password manager</li>
+                </ul>
             </div>
-            
-            <button id="generate-btn" class="generate-btn">Generate Password</button>
-            
-            <div class="password-output">
-                <input type="text" id="password" readonly placeholder="Your password will appear here">
-                <button id="copy-btn" class="copy-btn" title="Copy to clipboard">📋</button>
-            </div>
-            
-            <div class="strength-meter">
-                <div class="strength-label">Strength:</div>
-                <div class="strength-bar">
-                    <div id="strength-fill" class="strength-fill"></div>
-                </div>
-                <span id="strength-text">Generate a password</span>
-            </div>
-        </div>
-        
-        <div class="info-section">
-            <h3>Password Security Tips:</h3>
-            <ul>
-                <li>Use a unique password for each account</li>
-                <li>Make passwords at least 12 characters long</li>
-                <li>Include a mix of character types</li>
-                <li>Don't use personal information</li>
-                <li>Consider using a password manager</li>
-            </ul>
         </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
