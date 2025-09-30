@@ -1,6 +1,6 @@
 import gerarSenha from './geradores.js';
 import './copyBtn.js';
-
+import './rangeUpdate.js';
 
 const passwordLength = document.getElementById('passwordLength');
 const checkboxLowercase = document.getElementById('checkboxLowercase');
