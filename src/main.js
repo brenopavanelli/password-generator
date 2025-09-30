@@ -1,4 +1,6 @@
 import gerarSenha from './geradores.js';
+import './copyBtn.js';
+
 
 const passwordLength = document.getElementById('passwordLength');
 const checkboxLowercase = document.getElementById('checkboxLowercase');
@@ -8,6 +10,8 @@ const checkboxSymbols = document.getElementById('checkboxSymbols');
 
 const generateBtn = document.getElementById('generateBtn');
 
+const result = document.getElementById('password');
+
 generateBtn.addEventListener('click', () => {
     const length = passwordLength.value;
     const lowercase = checkboxLowercase.checked;
@@ -16,6 +20,8 @@ generateBtn.addEventListener('click', () => {
     const symbols = checkboxSymbols.checked;
 
     const password = gerarSenha(length, uppercase, lowercase, numbers, symbols);
+    result.value = password;
+    
     console.log(password);
 })
 
