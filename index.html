@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link href="./src/output.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link href="./src/output.css" rel="stylesheet">
 </head>
-<body class='bg-gray-100'>
-    <div class="grid h-screen w-screen place-items-center ">
-        <div class="container grid h-fit w-3/5 place-items-center p-6 bg-white rounded-lg shadow-lg gap-3">
-            <h1 class="text-3xl font-bold ">🔐 Password Generator</h1>
-            <div class="generator-form mt-10">
-                <div class="form-group ">
-                    <label for="length" class="">Password Length:</label>
-                    <input type="range" class="" id="passwordLength" min="4" max="50" value="12">
-                    <span id="length-value" class="">12</span>
-                </div>
-                
-                <div class="form-group">
-                    <h3>Character Types:</h3>
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" id="checkboxLowercase" checked>
-                            Lowercase (a-z)
-                        </label>
-                        <label>
-                            <input type="checkbox" id="checkboxUppercase" checked>
-                            Uppercase (A-Z)
-                        </label>
-                        <label>
-                            <input type="checkbox" id="checkboxNumbers" checked>
-                            Numbers (0-9)
-                        </label>
-                        <label>
-                            <input type="checkbox" id="checkboxSymbols" checked>
-                            Symbols (!@#$%^&*)
-                        </label>
-                    </div>
-                </div>
-                
-                <button id="generateBtn" class="generate-btn w-full py-5 bg-blue-500 text-white rounded-lg font-bold h-10">Generate Password</button>
-                
-                <div class="password-output">
-                    <input type="text" id="password" readonly placeholder="Your password will appear here">
-                    <button id="copy-btn" class="copy-btn" title="Copy to clipboard">📋</button>
-                </div>
-                
-            </div>
-            
-            <div class="info-section ">
-                <h3>Password Security Tips:</h3>
-                <ul>
-                    <li>Use a unique password for each account</li>
-                    <li>Make passwords at least 12 characters long</li>
-                    <li>Include a mix of character types</li>
-                    <li>Don't use personal information</li>
-                    <li>Consider using a password manager</li>
-                </ul>
-            </div>
+<body class="bg-light text-dark font-sans">
+  <div class="grid h-screen w-screen place-items-center">
+    <div class="container grid h-fit w-3/5 place-items-center p-8 bg-white rounded-lg shadow-lg gap-6">
+
+      <!-- Título -->
+      <h1 class="text-3xl font-bold text-dark">🔐 Password Generator</h1>
+
+      <!-- Formulário -->
+      <div class="generator-form mt-6 w-full">
+
+        <!-- Slider comprimento -->
+        <div class="form-group flex items-center justify-between">
+          <label for="length" class="text-grayCustom font-medium">Password Length:</label>
+          <div class="flex items-center gap-2">
+            <input type="range" class="accent-highlight" id="passwordLength" min="4" max="50" value="12">
+            <span id="length-value" class="text-dark font-bold">12</span>
+          </div>
         </div>
+
+        <!-- Tipos de caracteres -->
+        <div class="form-group mt-6">
+          <h3 class="font-semibold text-dark mb-2">Character Types:</h3>
+          <div class="checkbox-group grid gap-2 text-grayCustom">
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="checkboxLowercase" checked class="accent-highlight">
+              Lowercase (a-z)
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="checkboxUppercase" checked class="accent-highlight">
+              Uppercase (A-Z)
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="checkboxNumbers" checked class="accent-highlight">
+              Numbers (0-9)
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" id="checkboxSymbols" checked class="accent-highlight">
+              Symbols (!@#$%^&*)
+            </label>
+          </div>
+        </div>
+
+        <!-- Botão gerar senha -->
+        <button id="generateBtn" class="mt-6 w-full py-3 bg-highlight text-dark rounded-lg font-bold hover:bg-accent transition">
+          Generate Password
+        </button>
+
+        <!-- Senha gerada -->
+        <div class="password-output flex items-center gap-2 mt-4">
+          <input type="text" id="password" readonly placeholder="Your password will appear here"
+            class="flex-1 border border-grayCustom rounded-lg p-2 bg-light text-dark">
+          <button id="copy-btn" class="px-3 py-2 bg-accent text-dark rounded-lg hover:bg-highlight transition" title="Copy to clipboard">📋</button>
+        </div>
+
+      </div>
+
+      <!-- Dicas -->
+      <div class="info-section mt-6 w-full bg-light p-4 rounded-lg border border-grayCustom">
+        <h3 class="font-semibold text-dark mb-2">Password Security Tips:</h3>
+        <ul class="list-disc pl-5 space-y-1 text-grayCustom">
+          <li>Use a unique password for each account</li>
+          <li>Make passwords at least 12 characters long</li>
+          <li>Include a mix of character types</li>
+          <li>Don't use personal information</li>
+          <li>Consider using a password manager</li>
+        </ul>
+      </div>
     </div>
-    <script src="src/main.js" type="module"></script>
+  </div>
+
+  <script src="src/main.js" type="module"></script>
 </body>
 </html>
